@@ -7,7 +7,7 @@ const HighlightSpeakers = () => {
       <div className="w-1/2 pr-10">
         <h1 className="text-5xl font-bold text-gray-800 mb-4">Highlight speakers</h1>
         <p className="text-lg mb-4">
-          We've gone all out for our launch night, with [total number] unmissable speakers who've developed exciting presentations exclusively for the Music Maker Network. Our speakers are also offering:
+          {`We've gone all out for our launch night, with [total number] unmissable speakers who've developed exciting presentations exclusively for the Music Maker Network. Our speakers are also offering:`}
         </p>
         <ul className="list-disc list-inside mb-4 text-gray-600">
           <li>Q+A sessions</li>

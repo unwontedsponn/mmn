@@ -39,7 +39,7 @@ const BuyTickets = () => {
             <div key={index} className="p-6 shadow-lg">
               <h2 className="text-2xl font-bold mb-3">{option.title}</h2>
               <p className="text-3xl text-red-500 mb-4">{option.price}</p>
-              <p className="font-semibold mb-3">What's included?</p>
+              <p className="font-semibold mb-3">{`What's included?`}</p>
               <ul className="mb-6">
                 {option.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center mb-1">
