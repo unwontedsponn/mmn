@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const HighlightSpeakers = () => {
+const Artists = () => {
   return (
     <div className="bg-white py-12 px-24 flex justify-between">
       {/* Text Section */}
@@ -36,4 +36,4 @@ const HighlightSpeakers = () => {
   );
 };
 
-export default HighlightSpeakers;
+export default Artists;
