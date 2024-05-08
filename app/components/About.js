@@ -18,15 +18,7 @@ const About = () => {
       <div className="w-1/2 flex flex-col justify-center p-12 space-y-6 bg-white">
         <h1 className="text-4xl font-bold">What is MMN?</h1>
         <p className="text-xl">
-          {`If TED Talks made love to Sofar Sounds, you'd get MMN. The perfect blend of smart and
-          thought-provoking, in a relaxed and cozy space where you can be yourself.`}
-        </p>
-        <p className="text-xl">
-          {`It's the perfect night for producers, sound engineers, audio technologists, and creatives – and
-          anyone else who lives, breathes, and sleeps making music.`}
-        </p>
-        <p className="text-xl">
-          Hear talks, join immersive demos, and level up with industry players and pioneers.
+          {`Welcome to the Music Maker Network’s podcast. Where we chat to the people who make music happen. From artists to producers, engineers to composers, if you are looking to learn more about the ‘behind the scenes’ of music, you’ve come to the right place. `}
         </p>
         <Link href="/watch-video" className="text-red-500 hover:text-red-700 font-bold">Watch video</Link>
       </div>
