@@ -2,17 +2,17 @@ import Link from 'next/link';
 
 const Artists = () => {
   return (
-    <div className="py-12 px-24 flex justify-between">
+    <div className="py-12 px-32 flex justify-center items-center space-x-12">
       {/* Text Section */}
       <div className="w-1/2 pr-10">
-        <h1 className="text-5xl font-bold text-gray-800 mb-4">Highlight speakers</h1>
+        <h1 className="text-5xl font-bold text-gray-800 mb-4">Artists</h1>
         <p className="body-poppins text-lg mb-4">
-          {`We've gone all out for our launch night, with [total number] unmissable speakers who've developed exciting presentations exclusively for the Music Maker Network. Our speakers are also offering:`}
+          {`Explore our captivating podcasts featuring some of the world’s most intriguing and knowledgeable musicians, brought to you by the Music Maker Network. Each episode dives deep into the artists' personal journeys and creative processes, revealing insights that encompass everything from overcoming personal challenges to mastering technical intricacies in the music industry. Here's what our speakers bring to each session:`}
         </p>
         <ul className="body-poppins list-disc list-inside mb-4 text-gray-600">
-          <li>Q+A sessions</li>
-          <li>Freebies and discounts</li>
-          <li>Real-time feedback on YOUR projects</li>
+          <li><span className="font-bold">In-Depth Conversations:</span> Dive into the life stories of musicians who've shaped their worlds through sound.</li>
+          <li><span className="font-bold">Tech Tips and Tricks:</span> Learn valuable techniques directly from the pros in music production and sound engineering.</li>
+          <li><span className="font-bold">Interactive Q&A Sessions:</span> Have your pressing questions answered in real-time by industry veterans.</li>
         </ul>
         <Link href="/speakers" className="text-red-600 hover:text-red-800 font-bold">View all speakers</Link>
       </div>
@@ -23,15 +23,12 @@ const Artists = () => {
           {/* Placeholder for speakers */}
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex flex-col items-center">
-              <img src="/images/speaker.webp" alt="Speaker Placeholder" className="w-24 h-24 mb-1" />
+              <img src="/images/speaker.webp" alt="Speaker Placeholder" className="w-36 h-36 mb-1" />
               <span className="text-sm text-gray-500">TBC</span>
             </div>
           ))}
         </div>
       </div>
-      
-      {/* Additional Imagery - Red Accent on the Far Right */}
-      <div className="w-1/12 bg-red-600 h-full"></div>
     </div>
   );
 };

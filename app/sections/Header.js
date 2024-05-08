@@ -20,7 +20,7 @@ const Header = () => {
             <li>
 
               {/* Buy Tickets Button */}
-              <a href="https://open.spotify.com/show/7Hg8aL7xyELS2CJ9TKYykC?si=eb671e91da174363" className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800" target="_blank" rel="noopener noreferrer">LISTEN TO EPISODES</a>
+              <a href="https://open.spotify.com/show/7Hg8aL7xyELS2CJ9TKYykC?si=eb671e91da174363" className="bg-black text-white px-6 py-2 hover:bg-red-700" target="_blank" rel="noopener noreferrer">LISTEN TO EPISODES</a>
             </li>
           </ul>
         </nav>
