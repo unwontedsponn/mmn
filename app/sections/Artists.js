@@ -10,7 +10,7 @@ const Artists = () => {
           {`Explore our captivating podcasts featuring some of the world’s most intriguing and knowledgeable musicians, brought to you by the Music Maker Network. Each episode dives deep into the artists' personal journeys and creative processes, revealing insights that encompass everything from overcoming personal challenges to mastering technical intricacies in the music industry. Here's what our speakers bring to each session:`}
         </p>
         <ul className="body-poppins list-disc list-inside mb-4 text-gray-600">
-          <li><span className="font-bold">In-Depth Conversations:</span> Dive into the life stories of musicians who've shaped their worlds through sound.</li>
+          <li><span className="font-bold">In-Depth Conversations:</span> {`Dive into the life stories of musicians who've shaped their worlds through sound.`}</li>
           <li><span className="font-bold">Tech Tips and Tricks:</span> Learn valuable techniques directly from the pros in music production and sound engineering.</li>
           <li><span className="font-bold">Interactive Q&A Sessions:</span> Have your pressing questions answered in real-time by industry veterans.</li>
         </ul>
