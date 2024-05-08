@@ -5,11 +5,15 @@ const Hero = () => {
         <h1 className="text-6xl font-bold mb-4">Music Maker Network</h1>
         <p className="text-xl mb-6">LONDON, UK</p>
         <p className="max-w-2xl text-lg mb-6">
-          {`Learn, connect and be inspired by the music industry's hottest, most intriguing innovators and emerging talent at the Music Maker Network launch night.`}
+          {`If you are looking to learn more about the ‘behind the scenes’ of music, you’ve come to the right place.`}
         </p>
-        <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-          BUY TICKETS
-        </button>
+        <a 
+          href="https://open.spotify.com/show/7Hg8aL7xyELS2CJ9TKYykC?si=eb671e91da174363" 
+          className="bg-red-500 text-white font-bold px-4 py-2 rounded hover:bg-red-700 text-center" 
+          target="_blank" 
+          rel="noopener noreferrer">
+            LISTEN TO EPISODES
+        </a>
       </div>
     </div>
   );
