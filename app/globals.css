@@ -2,5 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Poppins font */
+/* Poppins font - apply this class to overide Playfair on an element*/
 .body-poppins {font-family: 'Poppins', sans-serif;}
+
+/* Background changed to snow instead of white*/
+body {background-color: #fffafa;}

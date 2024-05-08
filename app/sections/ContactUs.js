@@ -8,7 +8,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="bg-red-950 relative text-white py-12 px-8" style={{ backgroundImage: 'url("/path/to/your/background-image.jpg")' }}>
+    <div className="bg-red-950 relative text-white py-12 px-8" style={{ backgroundImage: 'url("/images/footer pic.jpg")' }}>
       <div className="max-w-4xl mx-auto flex justify-between items-center">
         <div className="w-1/2">
           <p>Got other questions?</p>
