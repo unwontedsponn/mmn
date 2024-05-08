@@ -1,10 +1,10 @@
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Artists from "./components/Artists";
-import FAQ from "./components/FAQ";
-import ContactUs from "./components/ContactUs";
-import Footer from "./components/Footer";
+import Header from "./sections/Header";
+import Hero from "./sections/Hero";
+import About from "./sections/About";
+import Artists from "./sections/Artists";
+import FAQ from "./sections/FAQ";
+import ContactUs from "./sections/ContactUs";
+import Footer from "./sections/Footer";
 
 export default function Home() {
   return (

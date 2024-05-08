@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center h-full">
         <h1 className="text-6xl font-bold mb-4">Music Maker Network</h1>
         <p className="text-xl mb-6">LONDON, UK</p>
-        <p className="max-w-2xl text-lg mb-6">
+        <p className="body-poppins max-w-2xl text-lg mb-6">
           If you are looking to learn more about the ‘behind the scenes’ of music, you’ve come to the right place.
         </p>
         <a 

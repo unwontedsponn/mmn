@@ -1,8 +1,10 @@
 import { Analytics } from '@vercel/analytics/react';
-import { Inter } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const playfairDisplay = Playfair_Display({ subsets: ['latin'], display: 'swap' });
+const poppins = Poppins({ weight: '300', subsets: ['latin'], display: 'swap' });
 
 export const metadata = {
   title: "Music Maker Network",
@@ -12,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={playfairDisplay.className}>
         {children}
         <Analytics />
       </body>

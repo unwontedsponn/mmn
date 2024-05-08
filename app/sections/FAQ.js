@@ -34,7 +34,7 @@ const FAQ = () => {
               {faq.question}
             </button>
             <div className={`overflow-hidden transition-height duration-300 ease-in-out ${openIndex === index ? 'h-auto' : 'h-0'}`}>
-              <p className="pl-4 text-gray-700">{faq.answer}</p>
+              <p className="pl-4 text-gray-700 body-poppins">{faq.answer}</p>
             </div>
           </div>
         ))}
