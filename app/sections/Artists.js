@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Artists = () => {
   return (
-    <div className="bg-white py-12 px-24 flex justify-between">
+    <div className="py-12 px-24 flex justify-between">
       {/* Text Section */}
       <div className="w-1/2 pr-10">
         <h1 className="text-5xl font-bold text-gray-800 mb-4">Highlight speakers</h1>

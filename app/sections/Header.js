@@ -2,12 +2,12 @@ import Link from 'next/link';
 
 const Header = () => {
   return (
-    <header className="bg-white shadow-md">
+    <header className="shadow-md">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         {/* Logo Section */}
         <div className="text-2xl font-bold text-red-600">
           <Link href="/">
-            <img src="https://uploads-ssl.webflow.com/63762c3e064651b696e64ed1/63c6de9a40bc654a546f167a_mmn-4.svg" alt="MMN Logo" style={{ height: '50px' }} />
+            <img src="https://uploads-ssl.webflow.com/63762c3e064651b696e64ed1/63c6de9a40bc654a546f167a_mmn-4.svg" alt="MMN Logo" style={{ height: '30px' }} />
           </Link>
         </div>
         {/* Navigation Section */}

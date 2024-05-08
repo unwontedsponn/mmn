@@ -22,7 +22,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="flex justify-between items-center bg-white p-8">
+    <div className="flex justify-between items-center p-8">
       <div className="w-2/3">
         <h1 className="text-3xl font-bold mb-6">FAQs</h1>
         {faqs.map((faq, index) => (

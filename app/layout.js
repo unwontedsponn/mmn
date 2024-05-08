@@ -4,7 +4,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 
 const playfairDisplay = Playfair_Display({ subsets: ['latin'], display: 'swap' });
-const poppins = Poppins({ weight: '300', subsets: ['latin'], display: 'swap' });
+const poppins = Poppins({ weight: '200', subsets: ['latin'], display: 'swap' });
 
 export const metadata = {
   title: "Music Maker Network",

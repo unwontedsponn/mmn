@@ -8,6 +8,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        
+      },
+      letterSpacing: {
+        wider2: '0.2em',  // Adding a custom letter-spacing value
       },
     },
   },

@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 /* Poppins font - apply this class to overide Playfair on an element*/
-.body-poppins {font-family: 'Poppins', sans-serif;}
+.body-poppins {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+}
 
 /* Background changed to snow instead of white*/
 body {background-color: #fffafa;}
