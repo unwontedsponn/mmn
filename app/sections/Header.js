@@ -1,9 +1,31 @@
+"use client"
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const Header = () => {
+export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {  // Change the background if scrolled over 50px
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    // Listen for scroll events
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup function to remove the event listener
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="shadow-md">
-      <div className="container mx-auto flex items-center justify-between py-4 px-6">
+    <header className={`${isScrolled ? 'bg-snow' : 'bg-transparent'} fixed top-0 w-full z-20 transition-colors duration-300 ease-in-out`}>
+      <div className="container mx-auto flex items-center justify-between py-5 px-6">
         {/* Logo Section */}
         <div className="text-2xl font-bold text-red-600">
           <Link href="/">
@@ -13,27 +35,17 @@ const Header = () => {
         {/* Navigation Section */}
         <nav>
           <ul className="flex items-center space-x-8">
-            <li><Link href="/about" className="text-gray-600 hover:text-gray-900">About</Link></li>
-            <li><Link href="/artists" className="text-gray-600 hover:text-gray-900">Artists</Link></li>
-            <li><Link href="/faqs" className="text-gray-600 hover:text-gray-900">FAQs</Link></li>
-            <li><Link href="/contact" className="text-gray-600 hover:text-gray-900">Contact</Link></li>
+            <li><Link href="/about" className={`${isScrolled ? 'text-gray-600' : 'text-white'} hidden md:block hover:text-gray-900`}>About</Link></li>
+            <li><Link href="/artists" className={`${isScrolled ? 'text-gray-600' : 'text-white'} hidden md:block hover:text-gray-900`}>Artists</Link></li>
+            <li><Link href="/faqs" className={`${isScrolled ? 'text-gray-600' : 'text-white'} hidden md:block hover:text-gray-900`}>FAQs</Link></li>
+            <li><Link href="/contact" className={`${isScrolled ? 'text-gray-600' : 'text-white'} hidden md:block hover:text-gray-900`}>Contact</Link></li>
             <li>
-
               {/* Buy Tickets Button */}
-              <a href="https://open.spotify.com/show/7Hg8aL7xyELS2CJ9TKYykC?si=eb671e91da174363" className="bg-black text-white px-6 py-2 hover:bg-red-700" target="_blank" rel="noopener noreferrer">LISTEN TO EPISODES</a>
+              <a href="https://open.spotify.com/show/7Hg8aL7xyELS2CJ9TKYykC?si=eb671e91da174363" className="bg-red md:bg-black text-white px-6 py-2 hover:bg-red" target="_blank" rel="noopener noreferrer">LISTEN TO EPISODES</a>
             </li>
           </ul>
         </nav>
       </div>
     </header>
   );
-};
-
-export default Header;
-
-
-
-// Old links
-{/* <li><Link href="/speakers" className="text-gray-600 hover:text-gray-900">Speakers</Link></li>
-<li><Link href="/agenda" className="text-gray-600 hover:text-gray-900">Agenda</Link></li> */}
-{/* <Link href="/tickets" className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">BUY TICKETS</Link> */}
+}
