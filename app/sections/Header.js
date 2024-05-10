@@ -34,9 +34,9 @@ export default function Header( {aboutInView, speakersInView, contactInView} ) {
         {/* Navigation Section */}
         <nav>
           <ul className="flex items-center space-x-4">
-            <li><Link href="/#about" className={`${isScrolled ? 'text-gray-600' : 'text-white'} ${aboutInView ? 'bg-red' : ''} p-2 hidden md:block hover:text-gray-900 hover:bg-red`}>About</Link></li>
-            <li><Link href="/#speakers" className={`${isScrolled ? 'text-gray-600' : 'text-white'} ${speakersInView ? 'bg-red' : ''} p-2 hidden md:block hover:text-gray-900 hover:bg-red`}>Speakers</Link></li>
-            <li><Link href="/#contact" className={`${isScrolled ? 'text-gray-600' : 'text-white'} ${contactInView ? 'bg-red' : ''} p-2 hidden md:block hover:text-gray-900 hover:bg-red`}>Contact</Link></li>
+            <li><Link href="/#about" className={`${isScrolled ? 'text-gray-600' : 'text-white'} ${aboutInView ? 'bg-red' : ''} hidden md:p-2 md:block hover:text-gray-900 hover:bg-red`}>About</Link></li>
+            <li><Link href="/#speakers" className={`${isScrolled ? 'text-gray-600' : 'text-white'} ${speakersInView ? 'bg-red' : ''} hidden md:p-2 md:block hover:text-gray-900 hover:bg-red`}>Speakers</Link></li>
+            <li><Link href="/#contact" className={`${isScrolled ? 'text-gray-600' : 'text-white'} ${contactInView ? 'bg-red' : ''} hidden md:p-2 md:block hover:text-gray-900 hover:bg-red`}>Contact</Link></li>
             <li>
               {/* Buy Tickets Button */}
               <a href="https://open.spotify.com/show/7Hg8aL7xyELS2CJ9TKYykC?si=eb671e91da174363" className="bg-red md:bg-black md:border-2 md:border-black text-white px-6 py-2 hover:bg-red hover:border-red" target="_blank" rel="noopener noreferrer">LISTEN TO EPISODES</a>
