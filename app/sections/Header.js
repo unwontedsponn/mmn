@@ -39,7 +39,7 @@ export default function Header( {aboutInView, speakersInView, contactInView} ) {
             <li><Link href="/#contact" className={`${isScrolled ? 'text-gray-600' : 'text-white'} ${contactInView ? 'bg-red' : ''} p-2 hidden md:block hover:text-gray-900 hover:bg-red`}>Contact</Link></li>
             <li>
               {/* Buy Tickets Button */}
-              <a href="https://open.spotify.com/show/7Hg8aL7xyELS2CJ9TKYykC?si=eb671e91da174363" className="bg-red md:bg-black md:border-2 md:border-black text-white px-6 py-2 hover:bg-red hover:border-red" target="_blank" rel="noopener noreferrer">LISTEN TO EPISODES ↗</a>
+              <a href="https://open.spotify.com/show/7Hg8aL7xyELS2CJ9TKYykC?si=eb671e91da174363" className="bg-red md:bg-black md:border-2 md:border-black text-white px-6 py-2 hover:bg-red hover:border-red" target="_blank" rel="noopener noreferrer">LISTEN TO EPISODE <span className="hidden md:block"> ↗</span></a>
             </li>
           </ul>
         </nav>
