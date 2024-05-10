@@ -1,4 +1,7 @@
-import FadeIn from '../utilities/FadeIn';
+"use client"
+import FadeIn from "../utilities/FadeIn";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 import Wiggle from '../utilities/Wiggle';
 
 const speakers = [
@@ -8,9 +11,18 @@ const speakers = [
   { episode: 'Episode 1', text: 'Michael Sebastian', link: 'https://open.spotify.com/episode/1FEhy5RQbkxnd6bfuE75EL?si=67ae94381ed04524' }
 ];
 
-export default function Artists() {
+export default function Speakers( {setSpeakersInView} ) {
+  const { ref, inView } = useInView({
+    threshold: 0.5,  // Trigger when 50% of the element is in view
+  });
+
+  useEffect(() => {
+    console.log("Speakers in view:", inView);
+    setSpeakersInView(inView);
+  }, [inView, setSpeakersInView]);
+
   return (
-    <FadeIn className="pt-12 xl:pb-40 px-10 xl:px-32 xl:flex justify-center items-center xl:space-x-12">
+    <FadeIn className="pt-12 xl:pb-40 px-10 xl:px-32 xl:flex justify-center items-center xl:space-x-12" ref={ref}>
       {/* Text Section */}
       <div className="md:px-20 xl:w-1/2 xl:pr-10 space-y-4">
         <h1 className="text-5xl font-bold text-gray-800 mb-4">Artists</h1>
@@ -39,7 +51,7 @@ export default function Artists() {
         <div className="grid grid-cols-2 gap-4">
           {speakers.map((speaker, i) => (
             <Wiggle key={i} className="flex flex-col items-center hover:cursor-pointer">
-            <a href={speaker.link} target="_blank" rel="noopener noreferrer">
+            <a href={speaker.link} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
               <img src={`/images/speaker 2.webp`} alt={`Speaker ${i + 1}`} className="w-36 h-36 mb-1" />
               <span className="text-sm text-gray-500">{speaker.episode}</span>
               <span className="hidden xl:block text-sm text-gray-500">{speaker.text}</span>

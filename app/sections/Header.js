@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import FadeIn from '../utilities/FadeIn';
 
-export default function Header() {
+export default function Header( {aboutInView, speakerInView, contactInView} ) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -35,11 +35,10 @@ export default function Header() {
         </div>
         {/* Navigation Section */}
         <nav>
-          <ul className="flex items-center space-x-8">
-            <li><Link href="/about" className={`${isScrolled ? 'text-gray-600' : 'text-white'} hidden md:block hover:text-gray-900`}>About</Link></li>
-            <li><Link href="/artists" className={`${isScrolled ? 'text-gray-600' : 'text-white'} hidden md:block hover:text-gray-900`}>Artists</Link></li>
-            <li><Link href="/faqs" className={`${isScrolled ? 'text-gray-600' : 'text-white'} hidden md:block hover:text-gray-900`}>FAQs</Link></li>
-            <li><Link href="/contact" className={`${isScrolled ? 'text-gray-600' : 'text-white'} hidden md:block hover:text-gray-900`}>Contact</Link></li>
+          <ul className="flex items-center space-x-4">
+            <li><Link href="/about" className={`${isScrolled ? 'text-gray-600' : 'text-white'} ${aboutInView ? 'bg-red' : ''} px-2 py-3 hidden md:block hover:text-gray-900`}>About</Link></li>
+            <li><Link href="/artists" className={`${isScrolled ? 'text-gray-600' : 'text-white'} ${speakerInView ? 'bg-red' : ''} px-2 py-3 hidden md:block hover:text-gray-900`}>Speakers</Link></li>
+            <li><Link href="/contact" className={`${isScrolled ? 'text-gray-600' : 'text-white'} ${contactInView ? 'bg-red' : ''} px-2 py-3 hidden md:block hover:text-gray-900`}>Contact</Link></li>
             <li>
               {/* Buy Tickets Button */}
               <a href="https://open.spotify.com/show/7Hg8aL7xyELS2CJ9TKYykC?si=eb671e91da174363" className="bg-red md:bg-black text-white px-6 py-2 hover:bg-red" target="_blank" rel="noopener noreferrer">LISTEN TO EPISODES</a>

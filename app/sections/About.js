@@ -1,11 +1,22 @@
+"use client"
 import FadeIn from "../utilities/FadeIn";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
-export default function About () {
+export default function About ( {setAboutInView} ) {
+  const { ref, inView } = useInView({
+    threshold: 0.5,  // Trigger when 50% of the element is in view
+  });
+
+  useEffect(() => {
+    setAboutInView(inView);
+  }, [inView, setAboutInView]);
+
   return (
     <FadeIn className="flex min-h-screen">
       
       {/* SVG/Image container */}
-      <div className="hidden lg:block w-1/2">
+      <div className="hidden lg:block w-1/2" ref={ref}>
         <img
           src="/images/about image.webp"
           alt="Abstract Art"
