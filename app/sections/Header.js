@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import FadeIn from '../utilities/FadeIn';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,7 +25,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`${isScrolled ? 'bg-snow' : 'bg-transparent'} fixed top-0 w-full z-20 transition-colors duration-300 ease-in-out`}>
+    <FadeIn className={`${isScrolled ? 'bg-snow' : 'bg-transparent'} fixed top-0 w-full z-20 transition-colors duration-300 ease-in-out`}>
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
         {/* Logo Section */}
         <div className="text-2xl font-bold text-red-600">
@@ -46,6 +47,6 @@ export default function Header() {
           </ul>
         </nav>
       </div>
-    </header>
+    </FadeIn>
   );
 }

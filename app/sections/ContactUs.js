@@ -1,4 +1,5 @@
 "use client"
+import FadeIn from "../utilities/FadeIn";
 
 export default function ContactUs() {
   const handleSubmit = (event) => {
@@ -8,7 +9,7 @@ export default function ContactUs() {
 
   return (
     <div className="relative flex items-center justify-center text-white py-12 px-8 bg-cover bg-center" style={{ backgroundImage: 'url("/images/footer pic.jpg")' }}>
-      <div className="w-full max-w-4xl p-8 bg-black bg-opacity-50 rounded-lg">
+      <FadeIn className="w-full max-w-4xl p-8 bg-black bg-opacity-50 rounded-lg">
         <div className="flex flex-col items-center">
           <p className="text-lg text-red">Got other questions?</p>
           <h1 className="text-4xl font-bold mb-6">Contact Us</h1>
@@ -20,7 +21,7 @@ export default function ContactUs() {
           </form>
         </div>
         <p className="mt-8 text-center">Creator? Influencer? Entrepreneur?<br/>The Music Maker Network welcomes enquiries from passionate professionals looking to collaborate. Drop us a line.</p>
-      </div>
+      </FadeIn>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { FaSpotify, FaYoutube, FaTiktok } from 'react-icons/fa';
+import FadeIn from '../utilities/FadeIn';
 
 const Footer = () => {
   return (
