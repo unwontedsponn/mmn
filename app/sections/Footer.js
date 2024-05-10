@@ -1,7 +1,7 @@
 import { FaSpotify, FaYoutube, FaTiktok } from 'react-icons/fa';
 import FadeIn from '../utilities/FadeIn';
 
-const Footer = () => {
+export default function Footer () {
   return (
     <footer className="bg-black text-white p-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -10,7 +10,7 @@ const Footer = () => {
           <img src="https://uploads-ssl.webflow.com/63762c3e064651b696e64ed1/63c6de9a40bc654a546f167a_mmn-4.svg" alt="MMN Logo" style={{ height: '30px' }} />
         </div>
 
-        <p className="text-sm">© Copyright MMN 2023</p>
+        <p className="hidden sm:block text-sm">© Copyright MMN 2023</p>
 
         {/* Social Media Icons */}
         <div className="flex space-x-4">
@@ -28,5 +28,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;
