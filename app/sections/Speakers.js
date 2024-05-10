@@ -31,10 +31,10 @@ export default function Speakers( {setSpeakersInView} ) {
           <p className="body-poppins text-lg mb-4">
             {`Explore our captivating podcasts featuring some of the world’s most intriguing and knowledgeable musicians, brought to you by the Music Maker Network. Each episode dives deep into the artists' personal journeys and creative processes, revealing insights that encompass everything from overcoming personal challenges to mastering technical intricacies in the music industry. Here's what our speakers bring to each session:`}
           </p>
-          <ul className="hidden 2xl:block body-poppins mb-4 text-gray-800 space-y-4">
+          <ul className="body-poppins mb-4 text-gray-800 space-y-4">
             <li>
               <span className="font-bold">In-Depth Conversations:</span>
-              <div>{`Dive into the life stories of musicians who've shaped their worlds through sound.`}</div>
+              <div className="">{`Dive into the life stories of musicians who've shaped their worlds through sound.`}</div>
             </li>
             <li>
               <span className="font-bold">Tech Tips and Tricks:</span>
