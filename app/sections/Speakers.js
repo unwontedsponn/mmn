@@ -5,10 +5,10 @@ import { useEffect } from "react";
 import Wiggle from '../utilities/Wiggle';
 
 const speakers = [
-  { episode: 'Episode 4', text: 'TBC', link: '' },
-  { episode: 'Episode 3', text: 'King Tides', link: '' },
-  { episode: 'Episode 2', text: 'Claudia Kate', link: 'https://open.spotify.com/episode/3hQnBrRYHMO8aY0cy8KYCj?si=6b9e3f915d16424a' },
-  { episode: 'Episode 1', text: 'Michael Sebastian', link: 'https://open.spotify.com/episode/1FEhy5RQbkxnd6bfuE75EL?si=67ae94381ed04524' }
+  { episode: 'Episode 4 ↗', text: 'TBC', link: '' },
+  { episode: 'Episode 3 ↗', text: 'King Tides', link: '' },
+  { episode: 'Episode 2 ↗', text: 'Claudia Kate', link: 'https://open.spotify.com/episode/3hQnBrRYHMO8aY0cy8KYCj?si=6b9e3f915d16424a' },
+  { episode: 'Episode 1 ↗', text: 'Michael Sebastian', link: 'https://open.spotify.com/episode/1FEhy5RQbkxnd6bfuE75EL?si=67ae94381ed04524' }
 ];
 
 export default function Speakers( {setSpeakersInView} ) {
@@ -18,7 +18,6 @@ export default function Speakers( {setSpeakersInView} ) {
   });
 
   useEffect(() => {
-    console.log("Speakers in view:", inView);
     setSpeakersInView(inView);
   }, [inView, setSpeakersInView]);
 

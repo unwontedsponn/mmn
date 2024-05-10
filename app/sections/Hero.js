@@ -53,7 +53,7 @@ export default function Hero () {
             className="text-white px-4 py-2 border-2 hover:bg-red hover:border-red text-center inline-block w-auto" 
             target="_blank" 
             rel="noopener noreferrer">
-              LISTEN TO EPISODES
+              LISTEN TO EPISODES ↗
           </a>
         </FadeIn>  
       </div>
