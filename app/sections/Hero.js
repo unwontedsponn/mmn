@@ -2,7 +2,7 @@ import FadeIn from "../utilities/FadeIn";
 
 export default function Hero () {
   return (
-    <div className="relative text-white h-screen overflow-hidden">
+    <div id="hero" className="relative text-white h-screen overflow-hidden">
 
       {/* /**
       * Small Screen

@@ -1,14 +1,25 @@
 "use client"
 import FadeIn from "../utilities/FadeIn";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
-export default function ContactUs() {
+export default function Contact( {setContactInView} ) {
+  const { ref, inView } = useInView({
+    threshold: 0.5,  // Trigger when 50% of the element is in view
+    triggerOnce: false
+  });
+
+  useEffect(() => {
+    setContactInView(inView);
+  }, [inView, setContactInView]);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Form submitted!");
   };
 
   return (
-    <div className="relative flex items-center justify-center text-white py-12 px-8 bg-cover bg-center" style={{ backgroundImage: 'url("/images/footer pic.jpg")' }}>
+    <div className="relative flex items-center justify-center text-white py-12 px-8 bg-cover bg-center" style={{ backgroundImage: 'url("/images/footer pic.jpg")' }} ref={ref} id="contact">
       <FadeIn className="w-full max-w-4xl p-8 bg-black bg-opacity-50 rounded-lg">
         <div className="flex flex-col items-center">
           <p className="text-lg text-red">Got other questions?</p>

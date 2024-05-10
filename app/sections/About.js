@@ -16,7 +16,7 @@ export default function About ( {setAboutInView} ) {
     <FadeIn className="flex min-h-screen">
       
       {/* SVG/Image container */}
-      <div className="hidden lg:block w-1/2" ref={ref}>
+      <div className="hidden lg:block w-1/2" ref={ref} id="about">
         <img
           src="/images/about image.webp"
           alt="Abstract Art"

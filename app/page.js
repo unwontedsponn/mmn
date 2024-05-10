@@ -4,7 +4,7 @@ import Header from "./sections/Header";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Speakers from "./sections/Speakers";
-import ContactUs from "./sections/ContactUs";
+import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
       <Hero />
       <About setAboutInView={setAboutInView} />
       <Speakers setSpeakersInView={setSpeakersInView}/>
-      <ContactUs setContactInView={setContactInView}/>
+      <Contact setContactInView={setContactInView}/>
       <Footer />
     </>
   );

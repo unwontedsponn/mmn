@@ -3,16 +3,14 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import FadeIn from '../utilities/FadeIn';
 
-export default function Header( {aboutInView, speakerInView, contactInView} ) {
+export default function Header( {aboutInView, speakersInView, contactInView} ) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {  // Change the background if scrolled over 50px
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      // Change the background if scrolled over 50px
+      if (window.scrollY > 50) setIsScrolled(true);
+      else setIsScrolled(false);
     };
 
     // Listen for scroll events
@@ -29,19 +27,19 @@ export default function Header( {aboutInView, speakerInView, contactInView} ) {
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
         {/* Logo Section */}
         <div className="text-2xl font-bold text-red-600">
-          <Link href="/">
+          <Link href="/#hero">
             <img src="https://uploads-ssl.webflow.com/63762c3e064651b696e64ed1/63c6de9a40bc654a546f167a_mmn-4.svg" alt="MMN Logo" style={{ height: '30px' }} />
           </Link>
         </div>
         {/* Navigation Section */}
         <nav>
           <ul className="flex items-center space-x-4">
-            <li><Link href="/about" className={`${isScrolled ? 'text-gray-600' : 'text-white'} ${aboutInView ? 'bg-red' : ''} px-2 py-3 hidden md:block hover:text-gray-900`}>About</Link></li>
-            <li><Link href="/artists" className={`${isScrolled ? 'text-gray-600' : 'text-white'} ${speakerInView ? 'bg-red' : ''} px-2 py-3 hidden md:block hover:text-gray-900`}>Speakers</Link></li>
-            <li><Link href="/contact" className={`${isScrolled ? 'text-gray-600' : 'text-white'} ${contactInView ? 'bg-red' : ''} px-2 py-3 hidden md:block hover:text-gray-900`}>Contact</Link></li>
+            <li><Link href="/#about" className={`${isScrolled ? 'text-gray-600' : 'text-white'} ${aboutInView ? 'bg-red' : ''} p-2 hidden md:block hover:text-gray-900 hover:bg-red`}>About</Link></li>
+            <li><Link href="/#speakers" className={`${isScrolled ? 'text-gray-600' : 'text-white'} ${speakersInView ? 'bg-red' : ''} p-2 hidden md:block hover:text-gray-900 hover:bg-red`}>Speakers</Link></li>
+            <li><Link href="/#contact" className={`${isScrolled ? 'text-gray-600' : 'text-white'} ${contactInView ? 'bg-red' : ''} p-2 hidden md:block hover:text-gray-900 hover:bg-red`}>Contact</Link></li>
             <li>
               {/* Buy Tickets Button */}
-              <a href="https://open.spotify.com/show/7Hg8aL7xyELS2CJ9TKYykC?si=eb671e91da174363" className="bg-red md:bg-black text-white px-6 py-2 hover:bg-red" target="_blank" rel="noopener noreferrer">LISTEN TO EPISODES</a>
+              <a href="https://open.spotify.com/show/7Hg8aL7xyELS2CJ9TKYykC?si=eb671e91da174363" className="bg-red md:bg-black md:border-2 md:border-black text-white px-6 py-2 hover:bg-red hover:border-red" target="_blank" rel="noopener noreferrer">LISTEN TO EPISODES</a>
             </li>
           </ul>
         </nav>

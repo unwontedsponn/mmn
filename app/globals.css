@@ -8,5 +8,8 @@
   font-weight: 200;
 }
 
+/* Smooth scrolling to sections*/
+html {scroll-behavior: smooth;}
+
 /* Background changed to snow instead of white*/
 body {background-color: #fffafa;}
