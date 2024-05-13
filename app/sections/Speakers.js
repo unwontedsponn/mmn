@@ -29,22 +29,8 @@ export default function Speakers( {setSpeakersInView} ) {
         <div className="px-12 xl:w-1/2 xl:pr-10 space-y-4">
           <h1 className="text-5xl font-bold text-gray-800 mb-4">Speakers</h1>
           <p className="body-poppins text-lg mb-4">
-            {`Explore our captivating podcasts featuring some of the world’s most intriguing and knowledgeable musicians, brought to you by the Music Maker Network. Each episode dives deep into the artists' personal journeys and creative processes, revealing insights that encompass everything from overcoming personal challenges to mastering technical intricacies in the music industry. Here's what our speakers bring to each session:`}
+            {`Here at MMN we’ve curated an inspiring selection of knowledgeable music makers, brought to you in our fun and informative podcasts. In each episode we dive into our speakers’ personal journeys and creative processes, revealing insights that encompass everything from how to get ahead in the music industry to the technical intricacies of engineering that truly make a difference. Come and spend time with the people shaping their worlds through sound.`}
           </p>
-          <ul className="body-poppins mb-4 text-gray-800 space-y-4">
-            <li>
-              <span className="font-bold">In-Depth Conversations:</span>
-              <div className="">{`Dive into the life stories of musicians who've shaped their worlds through sound.`}</div>
-            </li>
-            <li>
-              <span className="font-bold">Tech Tips and Tricks:</span>
-              <div>Learn valuable techniques directly from the pros in music production and sound engineering.</div>
-            </li>
-            <li>
-              <span className="font-bold">Interactive Q&A Sessions:</span>
-              <div>Have your pressing questions answered in real-time by industry veterans.</div>
-            </li>
-          </ul>
           <button href="/speakers" className="text-center px-4 py-2 text-red border-2 border-red hover:text-white hover:bg-red">View all speakers</button>
         </div>
         
