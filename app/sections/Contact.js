@@ -1,11 +1,11 @@
 "use client"
 import FadeIn from "../utilities/FadeIn";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-export default function Contact( {setContactInView} ) {
+export default function Contact({ setContactInView }) {
   const { ref, inView } = useInView({
-    threshold: 0.5,  // Trigger when 50% of the element is in view
+    threshold: 0.5,
     triggerOnce: false
   });
 
@@ -13,9 +13,40 @@ export default function Contact( {setContactInView} ) {
     setContactInView(inView);
   }, [inView, setContactInView]);
 
-  const handleSubmit = (event) => {
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleChange = (event) => {
+    setFormState({
+      ...formState,
+      [event.target.name]: event.target.value
+    });
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Form submitted!");
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formState)
+      });
+
+      if (response.ok) {
+        console.log('Form submitted successfully!');
+      } else {
+        console.error('Error submitting form');
+      }
+    } catch (error) {
+      console.error('Error submitting form', error);
+    }
   };
 
   return (
@@ -25,13 +56,49 @@ export default function Contact( {setContactInView} ) {
           <p className="text-lg text-red">Got other questions?</p>
           <h1 className="text-4xl font-bold mb-6">Contact Us</h1>
           <form onSubmit={handleSubmit} className="w-full max-w-lg space-y-6">
-            <input type="text" placeholder="Full Name" className="w-full p-3 bg-transparent border-b-2 border-white outline-none text-white placeholder-white" required />
-            <input type="email" placeholder="Email" className="w-full p-3 bg-transparent border-b-2 border-white outline-none text-white placeholder-white" required />
-            <input type="text" placeholder="Phone" className="w-full p-3 bg-transparent border-b-2 border-white outline-none text-white placeholder-white" />
-            <button type="submit" className="w-full border-2 border-white bg-red-500 hover:bg-red hover:border-red text-white font-bold py-3 px-4 transition-colors duration-200">SUBMIT</button>
+            <input 
+              type="text" 
+              name="name"
+              value={formState.name}
+              onChange={handleChange}
+              placeholder="Full Name" 
+              className="w-full p-3 bg-transparent border-b-2 border-white outline-none text-white placeholder-white" 
+              required 
+            />
+            <input 
+              type="email" 
+              name="email"
+              value={formState.email}
+              onChange={handleChange}
+              placeholder="Email" 
+              className="w-full p-3 bg-transparent border-b-2 border-white outline-none text-white placeholder-white" 
+              required 
+            />
+            <input 
+              type="text" 
+              name="phone"
+              value={formState.phone}
+              onChange={handleChange}
+              placeholder="Phone" 
+              className="w-full p-3 bg-transparent border-b-2 border-white outline-none text-white placeholder-white" 
+            />
+            <textarea 
+              name="message"
+              value={formState.message}
+              onChange={handleChange}
+              placeholder="Your Message" 
+              className="w-full p-3 bg-transparent border-b-2 border-white outline-none text-white placeholder-white" 
+              rows="4"
+              required
+            ></textarea>
+            <button 
+              type="submit" 
+              className="w-full border-2 border-white bg-red-500 hover:bg-red hover:border-red text-white font-bold py-3 px-4 transition-colors duration-200">
+              SUBMIT
+            </button>
           </form>
         </div>
-        <p className="mt-8 text-center">Creator? Influencer? Entrepreneur?<br/>The Music Maker Network welcomes enquiries from passionate professionals looking to collaborate. Drop us a line.</p>
+        <p className="mt-8 text-center">Creator? Influencer? Entrepreneur?<br />The Music Maker Network welcomes enquiries from passionate professionals looking to collaborate. Drop us a line.</p>
       </FadeIn>
     </div>
   );
