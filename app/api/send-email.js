@@ -16,7 +16,8 @@ export default async function handler(req, res) {
     // Setup email data
     let mailOptions = {
       from: `"${name}" <${email}>`,
-      to: 'ben@musicmakernetwork.com, alex@musicmakernetwork.com, anthony@musicmakernetwork.com',
+      to: 'ben@musicmakernetwork.com',
+      // to: 'ben@musicmakernetwork.com, alex@musicmakernetwork.com, anthony@musicmakernetwork.com',
       subject: 'New Contact Form Submission',
       text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
     };
