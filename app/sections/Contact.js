@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import FadeIn from "../utilities/FadeIn";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 export default function Contact({ setContactInView }) {
   const { ref, inView } = useInView({
     threshold: 0.5,
-    triggerOnce: false
+    triggerOnce: false,
   });
 
   useEffect(() => {
@@ -19,6 +19,8 @@ export default function Contact({ setContactInView }) {
     phone: '',
     message: ''
   });
+
+  const [submissionStatus, setSubmissionStatus] = useState(null);
 
   const handleChange = (event) => {
     setFormState({
@@ -40,12 +42,19 @@ export default function Contact({ setContactInView }) {
       });
 
       if (response.ok) {
-        console.log('Form submitted successfully!');
+        setSubmissionStatus('Email sent successfully!');
+        setFormState({
+          name: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
       } else {
-        console.error('Error submitting form');
+        setSubmissionStatus('Error submitting form. Please try again.');
       }
     } catch (error) {
       console.error('Error submitting form', error);
+      setSubmissionStatus('Error submitting form. Please try again.');
     }
   };
 
@@ -97,9 +106,12 @@ export default function Contact({ setContactInView }) {
               SUBMIT
             </button>
           </form>
+          {submissionStatus && (
+            <p className="mt-4 text-center">{submissionStatus}</p>
+          )}
         </div>
         <p className="mt-8 text-center">Creator? Influencer? Entrepreneur?<br />The Music Maker Network welcomes enquiries from passionate professionals looking to collaborate. Drop us a line.</p>
       </FadeIn>
     </div>
   );
-};
+}

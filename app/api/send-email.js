@@ -1,10 +1,10 @@
-// pages/api/send-email.js
 import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { name, email, phone, message } = req.body;
 
+    // Create a transporter object using SMTP transport
     let transporter = nodemailer.createTransport({
       service: 'Gmail',
       auth: {
@@ -13,6 +13,7 @@ export default async function handler(req, res) {
       },
     });
 
+    // Setup email data
     let mailOptions = {
       from: `"${name}" <${email}>`,
       to: 'ben@musicmakernetwork.com, alex@musicmakernetwork.com, anthony@musicmakernetwork.com',
