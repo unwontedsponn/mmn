@@ -31,32 +31,34 @@ export default function Contact({ setContactInView }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     try {
-      const response = await fetch('../api/send-email', {
+      const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formState)
+        body: JSON.stringify(formState),
       });
-
+  
       if (response.ok) {
         setSubmissionStatus('Email sent successfully!');
         setFormState({
           name: '',
           email: '',
           phone: '',
-          message: ''
+          message: '',
         });
       } else {
-        setSubmissionStatus('Error submitting form. Please try again.');
+        const errorData = await response.json();
+        console.error('Error response:', errorData);
+        setSubmissionStatus(`Error submitting form: ${errorData.message}. Please try again.`);
       }
     } catch (error) {
-      console.error('Error submitting form', error);
+      console.error('Error submitting form:', error);
       setSubmissionStatus('Error submitting form. Please try again.');
     }
-  };
+  };  
 
   return (
     <div className="relative flex items-center justify-center text-white py-12 px-8 bg-cover bg-center" style={{ backgroundImage: 'url("/images/footer pic.jpg")' }} ref={ref} id="contact">
