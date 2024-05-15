@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 export async function POST(request) {
-  const { name, email, phone, message } = await request.json();
+  const { name, email, subject, message } = await request.json();
 
   // Log environment variables to ensure they are being read correctly
   console.log('EMAIL_USER:', process.env.EMAIL_USER);
@@ -19,8 +19,8 @@ export async function POST(request) {
   let mailOptions = {
     from: `"${name}" <${email}>`,
     to: 'ben@musicmakernetwork.com',
-    subject: 'New Contact Form Submission',
-    text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
+    subject: `New Contact Form Submission - ${subject}`,
+    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
 
   try {
