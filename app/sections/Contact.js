@@ -16,7 +16,7 @@ export default function Contact({ setContactInView }) {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
-    phone: '',
+    subject: '',
     message: ''
   });
 
@@ -33,7 +33,7 @@ export default function Contact({ setContactInView }) {
     event.preventDefault();
   
     try {
-      const response = await fetch('../api/send-email', {
+      const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ export default function Contact({ setContactInView }) {
         setFormState({
           name: '',
           email: '',
-          phone: '',
+          subject: '',
           message: '',
         });
       } else {
@@ -87,10 +87,10 @@ export default function Contact({ setContactInView }) {
             />
             <input 
               type="text" 
-              name="phone"
-              value={formState.phone}
+              name="subject"
+              value={formState.subject}
               onChange={handleChange}
-              placeholder="Phone" 
+              placeholder="Subject" 
               className="w-full p-3 bg-transparent border-b-2 border-white outline-none text-white placeholder-white" 
             />
             <textarea 
