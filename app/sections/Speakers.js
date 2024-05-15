@@ -5,13 +5,13 @@ import { useEffect } from "react";
 import Wiggle from '../utilities/Wiggle';
 
 const speakers = [
-  { episode: 'Episode 4 ↗', text: 'TBC', link: '' },
-  { episode: 'Episode 3 ↗', text: 'King Tides', link: '' },
-  { episode: 'Episode 2 ↗', text: 'Claudia Kate', link: 'https://open.spotify.com/episode/3hQnBrRYHMO8aY0cy8KYCj?si=6b9e3f915d16424a' },
-  { episode: 'Episode 1 ↗', text: 'Michael Sebastian', link: 'https://open.spotify.com/episode/1FEhy5RQbkxnd6bfuE75EL?si=67ae94381ed04524' }
+  { episode: 'Episode 4', text: 'TBC', link: '' },
+  { episode: 'Episode 3', text: 'King Tides', link: '' },
+  { episode: 'Episode 2', text: 'Claudia Kate', link: 'https://open.spotify.com/episode/3hQnBrRYHMO8aY0cy8KYCj?si=6b9e3f915d16424a' },
+  { episode: 'Episode 1', text: 'Michael Sebastian', link: 'https://open.spotify.com/episode/1FEhy5RQbkxnd6bfuE75EL?si=67ae94381ed04524' }
 ];
 
-export default function Speakers( {setSpeakersInView} ) {
+export default function Speakers({ setSpeakersInView }) {
   const { ref, inView } = useInView({
     threshold: 0.5,  // Trigger when 50% of the element is in view
     triggerOnce: false
@@ -41,13 +41,21 @@ export default function Speakers( {setSpeakersInView} ) {
         <div className="hidden xl:block xl:w-1/3">
           <div className="grid grid-cols-2 gap-4">
             {speakers.map((speaker, i) => (
-              <Wiggle key={i} className="flex flex-col items-center hover:cursor-pointer">
-              <a href={speaker.link} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
-                <img src={`/images/speaker 2.webp`} alt={`Speaker ${i + 1}`} className="w-36 h-36 mb-1" />
-                <span className="text-sm text-gray-500">{speaker.episode}</span>
-                <span className="hidden xl:block text-sm text-gray-500">{speaker.text}</span>
-              </a>
-            </Wiggle>
+              <Wiggle key={i} className="flex flex-col items-center">
+                {speaker.link ? (
+                  <a href={speaker.link} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center hover:cursor-pointer">
+                    <img src={`/images/speaker 2.webp`} alt={`Speaker ${i + 1}`} className="w-36 h-36 mb-1" />
+                    <span className="text-sm text-gray-500">{speaker.episode}</span>
+                    <span className="hidden xl:block text-sm text-gray-500">{speaker.text}</span>
+                  </a>
+                ) : (
+                  <div className="flex flex-col items-center cursor-default">
+                    <img src={`/images/speaker 2.webp`} alt={`Speaker ${i + 1}`} className="w-36 h-36 mb-1" />
+                    <span className="text-sm text-gray-500">{speaker.episode}</span>
+                    <span className="hidden xl:block text-sm text-gray-500">{speaker.text}</span>
+                  </div>
+                )}
+              </Wiggle>
             ))}
           </div>
         </div>
