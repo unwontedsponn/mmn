@@ -17,12 +17,13 @@ export default function Footer () {
           <a href="https://spotify.com" className="hover:text-gray-400" aria-label="Spotify">
             <FaSpotify size={24} />
           </a>
-          <a href="https://youtube.com" className="hover:text-gray-400" aria-label="YouTube">
+          {/* Youtube and Tiktok Icons are hidden */}
+          {/* <a href="https://youtube.com" className="hover:text-gray-400" aria-label="YouTube">
             <FaYoutube size={24} />
           </a>
           <a href="https://tiktok.com" className="hover:text-gray-400" aria-label="TikTok">
             <FaTiktok size={24} />
-          </a>
+          </a> */}
         </div>
       </div>
     </footer>

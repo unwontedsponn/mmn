@@ -30,7 +30,7 @@ export default function About ( {setAboutInView} ) {
         <p className="text-xl body-poppins text-black">
           {`Welcome to the Music Maker Network’s podcast. Where we chat to the people who make music happen. From artists to producers, engineers to composers, if you are looking to learn more about the ‘behind the scenes’ of music, you’ve come to the right place. `}
         </p>
-        <button href="/watch-video" className="text-center border-2 border-red text-white bg-red lg:text-red lg:bg-snow hover:bg-red hover:text-white text-xl py-2 px-4 w-40 text-left">Watch video</button>
+        <button href="/watch-video" className="text-center border-2 border-red text-white bg-red lg:text-red lg:bg-snow hover:bg-red hover:text-white text-xl py-2 px-4 w-40 text-left">Watch video <div className="text-xs">COMING SOON</div></button>
       </div>
     </FadeIn>
   );

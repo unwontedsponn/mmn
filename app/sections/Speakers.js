@@ -31,7 +31,10 @@ export default function Speakers( {setSpeakersInView} ) {
           <p className="body-poppins text-lg mb-4">
             {`Here at MMN we’ve curated an inspiring selection of knowledgeable music makers, brought to you in our fun and informative podcasts. In each episode we dive into our speakers’ personal journeys and creative processes, revealing insights that encompass everything from how to get ahead in the music industry to the technical intricacies of engineering that truly make a difference. Come and spend time with the people shaping their worlds through sound.`}
           </p>
-          <button href="/speakers" className="text-center px-4 py-2 text-red border-2 border-red hover:text-white hover:bg-red">View all speakers</button>
+          <button href="/speakers" className="text-center px-4 py-2 text-red border-2 border-red hover:text-white hover:bg-red">
+            View all speakers
+            <div className="text-xs">COMING SOON</div>
+          </button>
         </div>
         
         {/* Speaker Images Grid */}
