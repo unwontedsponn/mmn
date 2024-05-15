@@ -112,7 +112,7 @@ export default function Contact({ setContactInView }) {
             <p className="mt-4 text-center">{submissionStatus}</p>
           )}
         </div>
-        <p className="mt-8 text-center">Creator? Influencer? Entrepreneur?<br />The Music Maker Network welcomes enquiries from passionate professionals looking to collaborate. Drop us a line.</p>
+        <p className="mt-8 text-center">Creator? Influencer? Entrepreneur?<br />We welcome enquiries from passionate professionals looking to collaborate.</p>
       </FadeIn>
     </div>
   );
