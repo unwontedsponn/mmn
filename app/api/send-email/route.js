@@ -20,7 +20,7 @@ export async function POST(request) {
     from: `"${name}" <${email}>`,
     to: 'ben@musicmakernetwork.com',
     subject: `New Contact Form Submission - ${subject}`,
-    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+    text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`,
   };
 
   try {
