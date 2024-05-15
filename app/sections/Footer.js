@@ -14,7 +14,7 @@ export default function Footer () {
 
         {/* Social Media Icons */}
         <div className="flex space-x-4">
-          <a href="https://spotify.com" className="hover:text-gray-400" aria-label="Spotify">
+          <a href="https://open.spotify.com/show/7Hg8aL7xyELS2CJ9TKYykC?si=eb671e91da174363&nd=1&dlsi=0a4ed540f5314257" target="_blank" className="hover:text-gray-400" aria-label="Spotify">
             <FaSpotify size={24} />
           </a>
           {/* Youtube and Tiktok Icons are hidden */}
