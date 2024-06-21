@@ -5,8 +5,8 @@ export async function POST(request) {
   const { name, email, subject, message } = await request.json();
 
   // Log environment variables to ensure they are being read correctly
-  console.log('EMAIL_USER:', process.env.EMAIL_USER);
-  console.log('EMAIL_PASS:', process.env.EMAIL_PASS);
+  // console.log('EMAIL_USER:', process.env.EMAIL_USER);
+  // console.log('EMAIL_PASS:', process.env.EMAIL_PASS);
 
   let transporter = nodemailer.createTransport({
     service: 'Gmail',
@@ -18,7 +18,7 @@ export async function POST(request) {
 
   let mailOptions = {
     from: `"${name}" <${email}>`,
-    to: 'ben@musicmakernetwork.com',
+    to: 'alex@musicmakernetwork.com',
     subject: `New Contact Form Submission - ${subject}`,
     text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`,
   };
